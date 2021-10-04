@@ -1,6 +1,7 @@
 name: Test and Build the .NET Application
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
