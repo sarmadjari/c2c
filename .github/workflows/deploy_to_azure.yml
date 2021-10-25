@@ -7,7 +7,9 @@ on:
     workflows: ["Publish Docker image"]
     types:
       - completed
-
+env:
+  IMAGE_NAME: c2c
+  
 jobs:
     deploy:
         runs-on: ubuntu-latest
@@ -25,7 +27,7 @@ jobs:
           uses: 'azure/aci-deploy@v1'
           with:
             resource-group: ${{ secrets.AZ_RESOURCE_GROUP }}
-            #dns-name-label: ${{ secrets.AZ_RESOURCE_GROUP }}${{ github.run_number }}
+            dns-name-label: $IMAGE_NAME${{ secrets.AZ_RESOURCE_GROUP }}${{ github.run_number }}
             image: 'ghcr.io/sarmadjari/c2c:alpha-v0.1'
             name: c2c
             location: 'northeurope'
