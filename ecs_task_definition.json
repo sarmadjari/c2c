@@ -110,19 +110,6 @@
             "dnsServers": [
                 ""
             ],
-            "dnsSearchDomains": [
-                ""
-            ],
-            "extraHosts": [
-                {
-                    "hostname": "",
-                    "ipAddress": ""
-                }
-            ],
-            "dockerSecurityOptions": [
-                ""
-            ],
-            "interactive": true,
             "pseudoTerminal": true,
             "dockerLabels": {
                 "KeyName": ""
@@ -146,47 +133,16 @@
                     }
                 ]
             },
-            "healthCheck": {
-                "command": [
-                    "String"
-                ],
-                "interval": 0,
-                "timeout": 0,
-                "retries": 0,
-                "startPeriod": 0
-            },
             "systemControls": [
                 {
                     "namespace": "",
                     "value": ""
                 }
             ],
-            "resourceRequirements": [
-                {
-                    "value": "String",
-                    "type": "InferenceAccelerator"
-                }
-            ],
             "firelensConfiguration": {
                 "type": "fluentd",
                 "options": {
                     "KeyName": ""
-                }
-            }
-        }
-    ],
-    "volumes": [
-        {
-            "name": "String",
-            "host": {
-                "sourcePath": ""
-            },
-            "fsxWindowsFileServerVolumeConfiguration": {
-                "fileSystemId": "",
-                "rootDirectory": "",
-                "authorizationConfig": {
-                    "credentialsParameter": "",
-                    "domain": ""
                 }
             }
         }
@@ -201,26 +157,5 @@
             "key": "",
             "value": ""
         }
-    ],
-    "pidMode": "host",
-    "ipcMode": "task",
-    "proxyConfiguration": {
-        "type": "APPMESH",
-        "containerName": "String",
-        "properties": [
-            {
-                "name": "",
-                "value": ""
-            }
-        ]
-    },
-    "inferenceAccelerators": [
-        {
-            "deviceName": "",
-            "deviceType": ""
-        }
-    ],
-    "ephemeralStorage": {
-        "sizeInGiB": 0
-    }
+    ]
 }
