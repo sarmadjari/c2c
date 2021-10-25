@@ -1,5 +1,5 @@
 {
-    "family": "first-run-task-definition",
+    "family": "String",
     "taskRoleArn": "",
     "executionRoleArn": "",
     "networkMode": "awsvpc",
@@ -38,7 +38,7 @@
             ],
             "environmentFiles": [
                 {
-                    "value": "",
+                    "value": "String",
                     "type": "s3"
                 }
             ],
@@ -66,8 +66,8 @@
                 },
                 "devices": [
                     {
-                        "hostPath": "",
-                        "containerPath": "",
+                        "hostPath": "String",
+                        "containerPath": "String",
                         "permissions": [
                             "read"
                         ]
@@ -77,7 +77,7 @@
                 "sharedMemorySize": 0,
                 "tmpfs": [
                     {
-                        "containerPath": "",
+                        "containerPath": "String",
                         "size": 0,
                         "mountOptions": [
                             ""
@@ -95,7 +95,7 @@
             ],
             "dependsOn": [
                 {
-                    "containerName": "",
+                    "containerName": "String",
                     "condition": "COMPLETE"
                 }
             ],
@@ -148,7 +148,7 @@
             },
             "healthCheck": {
                 "command": [
-                    ""
+                    "String"
                 ],
                 "interval": 0,
                 "timeout": 0,
@@ -163,7 +163,7 @@
             ],
             "resourceRequirements": [
                 {
-                    "value": "",
+                    "value": "String",
                     "type": "InferenceAccelerator"
                 }
             ],
@@ -193,7 +193,7 @@
                 }
             },
             "efsVolumeConfiguration": {
-                "fileSystemId": "",
+                "fileSystemId": "String",
                 "rootDirectory": "",
                 "transitEncryption": "DISABLED",
                 "transitEncryptionPort": 0,
@@ -233,7 +233,7 @@
     "ipcMode": "task",
     "proxyConfiguration": {
         "type": "APPMESH",
-        "containerName": "",
+        "containerName": "String",
         "properties": [
             {
                 "name": "",
