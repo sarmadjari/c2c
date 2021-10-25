@@ -18,5 +18,8 @@
             ],
             "essential": true
         }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
     ]
 }
