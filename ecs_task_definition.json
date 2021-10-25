@@ -5,7 +5,7 @@
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "",
+            "name": "c2c",
             "image": "",
             "repositoryCredentials": {
                 "credentialsParameter": ""
