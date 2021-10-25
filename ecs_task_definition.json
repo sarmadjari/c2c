@@ -7,15 +7,8 @@
         {
             "name": "c2c",
             "image": "",
-            "repositoryCredentials": {
-                "credentialsParameter": ""
-            },
-            "cpu": 0,
-            "memory": 0,
-            "memoryReservation": 0,
-            "links": [
-                ""
-            ],
+            "cpu": 256,
+            "memory": 512,
             "portMappings": [
                 {
                     "containerPort": 80,
@@ -24,18 +17,6 @@
                 }
             ],
             "essential": true,
-            "entryPoint": [
-                ""
-            ],
-            "command": [
-                ""
-            ],
-            "environment": [
-                {
-                    "name": "",
-                    "value": ""
-                }
-            ],
             "environmentFiles": [
                 {
                     "value": "String",
