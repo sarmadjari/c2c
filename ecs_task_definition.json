@@ -177,7 +177,7 @@
     ],
     "volumes": [
         {
-            "name": "",
+            "name": "String",
             "host": {
                 "sourcePath": ""
             },
