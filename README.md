@@ -8,6 +8,7 @@
 a simple containerised c# application to run on the cloud
 
 
-docker pull ghcr.io/sarmadjari/c2c:0.01-alpha
-docker run -d --name c2c2 -p 40295:40295 -p 5000:5000 ghcr.io/sarmadjari/c2c:0.01-alpha
+docker pull ghcr.io/sarmadjari/c2c:alpha-v0.1
+
+docker run -d --name c2c -p 8080:80 ghcr.io/sarmadjari/c2c:alpha-v0.1
 
