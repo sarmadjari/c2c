@@ -1,3 +1,5 @@
+LABEL org.opencontainers.image.source https://github.com/sarmadjari/c2c
+
 # syntax=docker/dockerfile:1
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
