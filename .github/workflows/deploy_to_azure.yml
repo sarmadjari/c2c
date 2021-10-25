@@ -1,8 +1,9 @@
 name: Deploy to Azure
 
-# Only trigger, when the build workflow succeeded
+
 on:
   workflow_dispatch:
+  # Only trigger, when the build workflow succeeded
   workflow_run:
     workflows: ["Publish Docker image"]
     types:
