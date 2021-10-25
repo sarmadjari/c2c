@@ -191,12 +191,6 @@
             }
         }
     ],
-    "placementConstraints": [
-        {
-            "type": "memberOf",
-            "expression": ""
-        }
-    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
