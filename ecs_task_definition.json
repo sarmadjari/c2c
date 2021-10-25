@@ -1,5 +1,5 @@
 {
-    "family": "String",
+    "family": "Deploy-C2C",
     "taskRoleArn": "",
     "executionRoleArn": "",
     "networkMode": "awsvpc",
