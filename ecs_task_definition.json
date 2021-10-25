@@ -181,27 +181,6 @@
             "host": {
                 "sourcePath": ""
             },
-            "dockerVolumeConfiguration": {
-                "scope": "task",
-                "autoprovision": true,
-                "driver": "",
-                "driverOpts": {
-                    "KeyName": ""
-                },
-                "labels": {
-                    "KeyName": ""
-                }
-            },
-            "efsVolumeConfiguration": {
-                "fileSystemId": "String",
-                "rootDirectory": "",
-                "transitEncryption": "DISABLED",
-                "transitEncryptionPort": 0,
-                "authorizationConfig": {
-                    "accessPointId": "",
-                    "iam": "DISABLED"
-                }
-            },
             "fsxWindowsFileServerVolumeConfiguration": {
                 "fileSystemId": "",
                 "rootDirectory": "",
