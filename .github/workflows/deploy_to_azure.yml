@@ -27,4 +27,4 @@ jobs:
             dns-name-label: ${{ secrets.AZ_RESOURCE_GROUP }}${{ github.run_number }}
             image: 'ghcr.io/sarmadjari/c2c:alpha-v0.1'
             name: c2c
-            location: 'North Europ'
+            location: 'northeurope'
