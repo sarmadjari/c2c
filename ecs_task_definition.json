@@ -1,5 +1,5 @@
 {
-    "family": "",
+    "family": "first-run-task-definition",
     "taskRoleArn": "",
     "executionRoleArn": "",
     "networkMode": "awsvpc",
