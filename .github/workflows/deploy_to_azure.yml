@@ -29,6 +29,6 @@ jobs:
           with:
             resource-group: ${{ secrets.AZ_RESOURCE_GROUP }}
             dns-name-label: sarmadjari-c2c
-            image: 'ghcr.io/sarmadjari/c2c:alpha-v0.1'
+            image: 'ghcr.io/sarmadjari/c2c:latest'
             name: c2c
             location: 'northeurope'
