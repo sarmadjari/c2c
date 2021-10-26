@@ -1,7 +1,6 @@
-# c2c
+## c2c
 
-
-a simple containerised c# application to run on the cloud
+#a simple containerised c# application to run on the cloud
 ---
 
 [![Build and Test the .NET Application](https://github.com/sarmadjari/c2c/actions/workflows/test_build_dotnet.yml/badge.svg?branch=main)](https://github.com/sarmadjari/c2c/actions/workflows/test_build_dotnet.yml)
