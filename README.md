@@ -13,7 +13,10 @@ docker pull ghcr.io/sarmadjari/c2c:latest
 
 docker run -d --name c2c -p 8080:80 ghcr.io/sarmadjari/c2c:latest
 
+---
+
 This application runs on [Azure].
+
 This application runs on [AWS].
 
 
