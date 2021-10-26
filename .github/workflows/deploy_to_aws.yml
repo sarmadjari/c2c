@@ -46,9 +46,8 @@ on:
                                                
 env:
   AWS_REGION: eu-west-1                   
-  ECR_REPOSITORY: MY_ECR_REPOSITORY           # set this to your Amazon ECR repository name
   ECS_SERVICE: c2c-service                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: default                 # set this to your Amazon ECS cluster name
+  ECS_CLUSTER: c2c-cluster                  # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: ./ecs_task_definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: c2c           # set this to the name of the container in the
