@@ -1,0 +1,34 @@
+name: Deploy to Azure
+
+
+on:
+  workflow_dispatch:
+  # Only trigger, when the build workflow succeeded
+  workflow_run:
+    workflows: ["Publish Docker image"]
+    types:
+      - completed
+env:
+  IMAGE_NAME: c2c
+  
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+        # checkout the repo
+        - name: 'Checkout GitHub Action'
+          uses: actions/checkout@main
+          
+        - name: 'Login via Azure CLI'
+          uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZ_CREDENTIALS }}
+        
+        - name: 'Deploy to Azure Container Instances'
+          uses: 'azure/aci-deploy@v1'
+          with:
+            resource-group: ${{ secrets.AZ_RESOURCE_GROUP }}
+            dns-name-label: sarmadjari-c2c
+            image: 'ghcr.io/sarmadjari/c2c:latest'
+            name: c2c
+            location: 'northeurope'
