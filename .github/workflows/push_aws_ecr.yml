@@ -1,0 +1,63 @@
+# This workflow will build and push a new container image to Amazon ECR,
+# and then will deploy a new task definition to Amazon ECS, when there is a push to the main branch.
+#
+# To use this workflow, you will need to complete the following set-up steps:
+#
+# 1. Create an ECR repository to store your images.
+#    For example: `aws ecr create-repository --repository-name my-ecr-repo --region us-east-2`.
+#    Replace the value of the `ECR_REPOSITORY` environment variable in the workflow below with your repository's name.
+#    Replace the value of the `AWS_REGION` environment variable in the workflow below with your repository's region.
+#
+#
+# 2. Store an IAM user access key in GitHub Actions secrets named `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+#    See the documentation for each action used below for the recommended IAM policies for this IAM user,
+#    and best practices on handling the access key credentials.
+
+name: Push to Amazon ECR
+
+on:
+  workflow_dispatch:
+  # Only trigger, when the build workflow succeeded
+  workflow_run:
+    workflows: ["Publish Docker image"]
+    types:
+      - completed
+
+env:
+  AWS_REGION: eu-west-1                                         # set this to your preferred AWS region, e.g. us-west-1
+  ECR_REPOSITORY: 214444164561.dkr.ecr.eu-west-1.amazonaws.com  # set this to your Amazon ECR repository name
+  CONTAINER_NAME: c2c                                           # set this to the name of the container in the
+  GH_REPOSITORY: ghcr.io/sarmadjari/c2c:latest
+
+jobs:
+  Push:
+    name: Push
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Pull, tag, and push image to Amazon ECR
+      id: copy-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: latest
+      run: |
+        echo ${{ steps.login-ecr.outputs.registry }}
+        docker pull $GH_REPOSITORY
+        docker tag $GH_REPOSITORY $ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG
+        echo "::set-output name=image::$ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG"

@@ -1,4 +1,4 @@
-name: Test and Build the .NET Application
+name: Build and Test the .NET Application
 
 on:
   workflow_dispatch:
