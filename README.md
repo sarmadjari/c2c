@@ -15,9 +15,9 @@ docker run -d --name c2c -p 8080:80 ghcr.io/sarmadjari/c2c:latest
 
 ---
 
-This application runs on [Azure].
+This application runs on [Azure] (Azure Container Instances).
 
-This application runs on [AWS].
+This application runs on [AWS] (Amazon Elastic Container Service).
 
 
 [Azure]: http://c2c.az.sarmad.cloud/
