@@ -39,7 +39,7 @@ on:
       - completed
                                                
 env:
-  AWS_REGION: eu-west-1                   
+  AWS_REGION: eu-central-1                   
   ECS_SERVICE: c2c-service                              # set this to your Amazon ECS service name
   ECS_CLUSTER: c2c-cluster                              # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: ./aws_ecs_task_definition.json   # set this to the path to your Amazon ECS task definition
